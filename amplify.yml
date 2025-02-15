@@ -23,7 +23,7 @@ backend:
   phases:
     build:
       commands:
-        - npm install -g aws-cdk@latest
+        - npm install -g @aws-amplify/cli
+        - amplify --version
         - npm ci
-        - npx amplify-app --platform nextjs
-        - npx amplify push --yes
+        - amplify push --yes
