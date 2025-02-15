@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "next lint"
   },
+
+  
   "dependencies": {
     "@aws-amplify/ui-react": "^0.0.0-next-e8bb73e-20250214000653",
     "@tailwindcss/postcss": "^4.0.6",
