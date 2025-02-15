@@ -12,6 +12,8 @@ frontend:
   phases:
     build:
       commands:
+        - nvm install 20.11.1  # Latest LTS
+        - nvm use 20.11.1
         - npm run build
   artifacts:
     baseDirectory: .next
