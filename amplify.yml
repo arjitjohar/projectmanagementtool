@@ -3,8 +3,7 @@ backend:
   phases:
     build:
       commands:
-
-        - npm ci --cache .npm --prefer-offline
+        - npm i
         - nvm install 20.5.0
         - nvm use 20.5.0
         - npm update -g aws-cdk
