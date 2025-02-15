@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^0.0.0-next-e8bb73e-20250214000653",
+    "@tailwindcss/postcss": "^4.0.6",
     "aws-amplify": "^6.13.0",
     "next": "^15.1.6",
+    "postcss": "^8.5.2",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tailwindcss": "^4.0.6"
   },
   "devDependencies": {
     "@aws-amplify/backend": "^1.14.1",
