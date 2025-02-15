@@ -10,28 +10,7 @@ import { useAuthenticator } from "@aws-amplify/ui-react";
 const client = generateClient<Schema>();
 
 export default function App() {
-  const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
-
   const { user, signOut } = useAuthenticator();
-  function listTodos() {
-    client.models.Todo.observeQuery().subscribe({
-      next: (data) => setTodos([...data.items]),
-    });
-  }
-
-  function deleteTodo(id: string) {
-    client.models.Todo.delete({ id })
-  }
-
-  useEffect(() => {
-    listTodos();
-  }, []);
-
-  function createTodo() {
-    client.models.Todo.create({
-      content: window.prompt("add content here"),
-    });
-  }
 
   return (
     <main>
