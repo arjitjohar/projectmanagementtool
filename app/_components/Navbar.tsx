@@ -26,7 +26,15 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Left side - Navigation links */}
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-8 absolute left-0 pl-4">
+
+          <Link 
+              href="/main/home/" 
+              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+            >
+              Home
+            </Link>
+
             <Link 
               href="/main/about/" 
               className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
@@ -48,7 +56,7 @@ const Navbar = () => {
           </div>
 
           {/* Right side - Auth + Theme toggle */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 absolute right-0 pr-4">
             <div className="flex space-x-2">
               <Link
                 href="/auth/login"

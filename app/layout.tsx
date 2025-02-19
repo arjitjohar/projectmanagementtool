@@ -5,6 +5,8 @@ import "@aws-amplify/ui-react/styles.css";
 import outputs from "@/amplify_outputs.json";
 import { Amplify } from "aws-amplify";
 import Navbar from "../app/_components/Navbar";
+import { ThemeProvider } from "../app/_components/theme_provider";
+
 
 Amplify.configure(outputs);
 
@@ -16,12 +18,20 @@ export default function RootLayout({
   return (
 
     
-    <html lang="en" className="">
-      <body className="bg-white dark:bg-gray-900">
+    <html lang="en" className="" suppressHydrationWarning>
+      <body className="light:bg-white dark:bg-gray-900">
+
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <Navbar />
-        <Authenticator>
+        <Authenticator variation="modal" signUpAttributes={['preferred_username']}>
           {children}
         </Authenticator>
+        </ThemeProvider>
       </body>
     </html>
 
