@@ -15,7 +15,7 @@ export default function HomePage() {
 
   return (
     <div>
-      <h1>Hi {customAttributes?.preferred_username || "loading.."}</h1>
+      <h1>Hi person</h1>
     </div>
   );
 }
