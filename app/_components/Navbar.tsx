@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import DarkRoundedButton from "./DarkRoundButton";
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -58,12 +59,16 @@ const Navbar = () => {
           {/* Right side - Auth + Theme toggle */}
           <div className="flex items-center space-x-4 absolute right-0 pr-4">
             <div className="flex space-x-2">
-              <Link
+
+            <Link
                 href="/auth/login"
                 className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
               >
-                Login/Signup
+                Profile
               </Link>
+
+
+              
               <Link
                 href="/auth/logout"
                 className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"

@@ -4,15 +4,12 @@ import { useState, useEffect } from "react";
 import { generateClient } from "aws-amplify/data";
 import type { Schema } from "@/amplify/data/resource";
 import "./../app/globals.css";
-import "@aws-amplify/ui-react/styles.css";
-import { useAuthenticator } from "@aws-amplify/ui-react";
 import { ThemeProvider } from "./_components/theme_provider";
 
 const client = generateClient<Schema>();
 
 // app/page.tsx
 export default function App() {
-  const { signOut } = useAuthenticator();
 
   return (
     <ThemeProvider>
@@ -50,42 +47,6 @@ export default function App() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section id="contact" className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-3xl font-bold text-gray-900 mb-8">Contact</h3>
-            <form className="max-w-xl mx-auto">
-              <div className="mb-4">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="w-full p-3 border rounded-lg"
-                />
-              </div>
-              <div className="mb-4">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="w-full p-3 border rounded-lg"
-                />
-              </div>
-              <div className="mb-4">
-                <textarea
-                  rows={4}
-                  placeholder="Message"
-                  className="w-full p-3 border rounded-lg"
-                ></textarea>
-              </div>
-              <button
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 w-full"
-                onClick={signOut}
-              >
-                Sign out
-              </button>
-            </form>
           </div>
         </section>
       </main>
