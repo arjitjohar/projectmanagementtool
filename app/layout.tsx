@@ -18,30 +18,32 @@ export default function RootLayout({
   const [showAuthenticator, setShowAuthenticator] = useState(false);
 
   return (
-    <html lang="en" className="" suppressHydrationWarning>
-      <body className="light:bg-white dark:bg-gray-900">
-        {showAuthenticator ? (
-          <Authenticator>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
-              <Navbar />
-              {children}
-            </ThemeProvider>
-          </Authenticator>
-        ) : (
-          <div className="landing-page flex flex-col items-center justify-center min-h-screen bg-gray-900">
-            <h1 className="text-5xl text-white text-center">Welcome to the Project Management Tool</h1>
-            <p className="text-white text-center mt-4">Manage your projects efficiently and effectively.</p>
-            <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onClick={() => setShowAuthenticator(true)}>
-              Login / Sign Up
-            </button>
-          </div>
-        )}
-      </body>
-    </html>
+    <Authenticator.Provider>
+      <html lang="en" className="" suppressHydrationWarning>
+        <body className="light:bg-white dark:bg-gray-900">
+          {showAuthenticator ? (
+            <Authenticator>
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
+              >
+                <Navbar />
+                {children}
+              </ThemeProvider>
+            </Authenticator>
+          ) : (
+            <div className="landing-page flex flex-col items-center justify-center min-h-screen bg-gray-900">
+              <h1 className="text-5xl text-white text-center">Welcome to the Project Management Tool</h1>
+              <p className="text-white text-center mt-4">Manage your projects efficiently and effectively.</p>
+              <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onClick={() => setShowAuthenticator(true)}>
+                Login / Sign Up
+              </button>
+            </div>
+          )}
+        </body>
+      </html>
+    </Authenticator.Provider>
   );
 }

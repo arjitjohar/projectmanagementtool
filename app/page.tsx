@@ -5,15 +5,21 @@ import { generateClient } from "aws-amplify/data";
 import type { Schema } from "@/amplify/data/resource";
 import "./../app/globals.css";
 import { ThemeProvider } from "./_components/theme_provider";
-
-const client = generateClient<Schema>();
+import { useAuthenticator } from "@aws-amplify/ui-react";
+  
 
 // app/page.tsx
 export default function App() {
-
+  const { signOut } = useAuthenticator();
+  const [user, setUser] = useState(null);
+  
   return (
     <ThemeProvider>
+
+
       <main className="py-12">
+        <button onClick={signOut}>Sign out</button>
+
         {/* Hero Section */}
         <section className="text-center py-20">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">

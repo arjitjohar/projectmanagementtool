@@ -2,9 +2,12 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import DarkRoundedButton from "./DarkRoundButton";
+import { signOut } from "aws-amplify/auth";
+import { useAuthenticator } from "@aws-amplify/ui-react";
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const { signOut } = useAuthenticator();
 
   useEffect(() => {
     if (localStorage.getItem('color-theme') === 'dark' || 
@@ -21,6 +24,8 @@ const Navbar = () => {
     html.classList.toggle('dark');
     localStorage.setItem('color-theme', darkMode ? 'light' : 'dark');
   };
+
+
 
   return (
     <nav className="bg-gray-800 dark:bg-gray-900 border-b border-gray-700">
@@ -69,12 +74,9 @@ const Navbar = () => {
 
 
               
-              <Link
-                href="/auth/logout"
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-              >
-                Logout
-              </Link>
+
+
+              <button onClick={signOut} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"> signOut  </button>
             </div>
 
             {/* Dark Mode Toggle */}
