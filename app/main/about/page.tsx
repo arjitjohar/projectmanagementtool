@@ -4,6 +4,7 @@
 import Image from 'next/image';
 import { Smile, Code, Bot, BookOpen, GraduationCap, Cloud, Music, Mountain } from 'lucide-react';
 import React from 'react';
+import globals from '../../styles/globals.module.css';
 
 interface StoryCard {
   title: string;
